@@ -49,9 +49,24 @@ function show(req, res) {
   })
 }
 
+function edit(req, res) {
+  Dog.findById(req.params.id)
+  .then(dog => {
+    res.render('dogs/edit', {
+      dog,
+      title: 'edit dog'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/dogs')
+  })
+}
+
 export {
   index,
   newDogs as new,
   create,
-  show
+  show,
+  edit
 }

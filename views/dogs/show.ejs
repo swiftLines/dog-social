@@ -7,6 +7,13 @@
     <div><%= dog.name %></div>
     <div>Approachability: </div>
     <div><%= dog.approach %></div>
+    <div><%= dog.lost %></div>
+    
+    <% if (dog.owner.equals(user?.profile._id)) { %>
+      <form action="/dogs/<%= dog._id %>/edit" method="GET">
+        <button class="btn" type="submit">Edit this Dog 🚧</button>
+      </form>
+    <% } %>
   </section>
 </main>
 
