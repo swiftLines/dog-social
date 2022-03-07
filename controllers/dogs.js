@@ -33,8 +33,25 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  Dog.findById(req.params.id)
+  .populate('owner')
+  .then(dog => {
+    console.log(dog)
+    res.render('dogs/show', {
+      dog,
+      title: "Dog view" //use name of dog
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/dogs')
+  })
+}
+
 export {
   index,
   newDogs as new,
-  create
+  create,
+  show
 }

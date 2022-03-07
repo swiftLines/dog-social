@@ -7,6 +7,8 @@ const router = Router()
 router.get('/', dogsCtrl.index)
 // GET - localhost:3000/dogs/new
 router.get('/new', dogsCtrl.new)
+// GET - localhost:3000/dogs/:id
+router.get('/:id', dogsCtrl.show)
 
 // POST - localhost:3000/dogs
 router.post('/', dogsCtrl.create)

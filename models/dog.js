@@ -2,6 +2,19 @@ import mongoose from "mongoose"
 
 const Schema = mongoose.Schema
 
+const commentSchema = new Schema({
+  text: {
+    type: String,
+    //set max chars
+  },
+  author: {
+    type: String
+  },
+  date: {
+    type: Date,
+  }
+})
+
 const dogSchema = new Schema({
   name: String,
   approach: {
@@ -11,8 +24,8 @@ const dogSchema = new Schema({
   },
   lost: Boolean,
   command: String,
-  owner: {type: Schema.Types.ObjectId, ref: "Profile"}
-  // comments: [commentSchema],
+  owner: {type: Schema.Types.ObjectId, ref: "Profile"},
+  comments: [commentSchema],
 }, {
   timestamps: true,
 })
