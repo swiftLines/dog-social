@@ -20,7 +20,21 @@ function newDogs(req, res) {
   })
 }
 
+function create(req, res) {
+  req.body.owner = req.user.profile._id
+  req.body.lost = !!req.body.lost
+  Dog.create(req.body)
+  .then(dog => {
+    res.redirect('/dogs')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/dogs')
+  })
+}
+
 export {
   index,
   newDogs as new,
+  create
 }

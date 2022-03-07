@@ -9,7 +9,10 @@
   <h2>All the Dogs!</h2>
 	<ul>
   <% dogs.forEach(dog => { %>
-    <li>🐕<%= dog.name %> is <%= dog.approach %></li>
+    <li>🐕<%= dog.name %></li>
+    <li><%= dog.approach %></li>
+    <li><%= dog.owner.name %></li>
+    <li><%= dog.command %></li>
   <% }) %>
   </ul>
 </section>
