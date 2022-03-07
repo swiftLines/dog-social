@@ -3,6 +3,9 @@
 
 <section>
   <h1>Dogs! </h1>
+  <% if (user) { %>
+    <a href="/dogs/new">Add Dog</a> 
+  <% } %>  
   <h2>All the Dogs!</h2>
 	<ul>
   <% dogs.forEach(dog => { %>

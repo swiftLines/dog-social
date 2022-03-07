@@ -1,0 +1,33 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <h1>Add a New Dog</h1> 
+  <form action="/dogs" method="POST">
+    <label>Name:
+      <input type="text" name="name">
+    </label><br>
+    <label>Approachability:
+      <select name="approach" id="approach-select">
+        <option value="approach freely">free to approach</option>
+        <option value="approach with caution">approach with caution</option>
+        <option value="do not approach">do not approach</option>
+      </select>
+    </label><br>
+    <label>Owner:
+      <output type="text" name="owner.name">
+    </label><br>
+    <label>Lost:
+      <select name="approach" id="approach-select">
+        <option value="Lost">Lost</option>
+        <option value="Not Lost">Not Lost</option>
+      </select>
+    </label><br>
+    <label>Command/s:
+      <input type="text" name="command">
+    </label><br>
+    <button type="submit">Add Dog</button>
+  </form>
+</main>
+
+<%- include('../partials/footer') %>

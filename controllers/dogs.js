@@ -14,7 +14,13 @@ function index(req, res) {
   })
 }
 
+function newDogs(req, res) {
+  res.render('dogs/new', {
+    title: 'Add Dog'
+  })
+}
 
 export {
-  index
+  index,
+  newDogs as new,
 }
