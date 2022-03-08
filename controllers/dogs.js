@@ -115,6 +115,14 @@ function deleteDog(req, res) {
   })
 }
 
+function createComment(req, res) {
+  Dog.findById(req.params.id, function(err, dog) {
+    dog.comments.push(req.body)
+    dog.save(function(err) {
+      res.redirect(`/dogs/${dog._id}`)
+    })
+  })
+}
 
 export {
   index,
@@ -124,5 +132,6 @@ export {
   edit,
   update,
   flipLost,
-  deleteDog as delete
+  deleteDog as delete,
+  createComment
 }

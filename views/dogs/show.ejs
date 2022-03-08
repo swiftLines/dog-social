@@ -26,7 +26,37 @@
       <button class='btn' type='submit'>Delete dog post 👋</button>
       </form>
     <% } %>
+    <h2>Comments</h2>
+    <% if (user) { %>
+      <form 
+        action="/dogs/<%= dog._id %>/comments"
+        id="add-comment-form"
+        method="post"
+      >
+        <label for="text-textarea">Comment:</label>
+        <textarea name="text" id="comment-textarea"></textarea>
+        <button type="submit">Add Comment</button>  
+    </form>
+    <% } %>
   </section>
+  <% if (dog.comments.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% dog.comments.forEach(function(comment) { %>
+          <tr>
+            <td><%= comment.text %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h3>No comments Yet</h3>
+  <% } %> 
 </main>
 
 <%- include('../partials/footer') %>

@@ -15,6 +15,8 @@ router.get("/:id/edit", isLoggedIn, dogsCtrl.edit)
 
 // POST - localhost:3000/dogs
 router.post('/', dogsCtrl.create)
+// POST - localhost:3000/dogs/:id/comments
+router.post('/:id/comments', isLoggedIn ,dogsCtrl.createComment)
 
 // PUT - localhost:3000/taco/:id
 router.put('/:id', isLoggedIn, dogsCtrl.update)
