@@ -22,6 +22,9 @@ router.put('/:id', isLoggedIn, dogsCtrl.update)
 // PATCH - localhost:3000/dogs/:id/flip-lost
 router.patch("/:id/flip-lost", isLoggedIn, dogsCtrl.flipLost)
 
+// DELETE - localhost:3000/dogs/:id
+router.delete('/:id', isLoggedIn, dogsCtrl.delete)
+
 export {
   router
 }

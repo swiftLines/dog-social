@@ -97,6 +97,24 @@ function flipLost(req, res) {
   })
 }
 
+function deleteDog(req, res) {
+  Dog.findById(req.params.id)
+  .then(dog => {
+    if (dog.owner.equals(req.user.profile._id)) {
+      dog.delete()
+      .then(() => {
+        res.redirect('/dogs')
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }   
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/dogs')
+  })
+}
+
 
 export {
   index,
@@ -105,5 +123,6 @@ export {
   show,
   edit,
   update,
-  flipLost
+  flipLost,
+  deleteDog as delete
 }
