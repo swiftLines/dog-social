@@ -16,6 +16,12 @@ router.get("/:id/edit", isLoggedIn, dogsCtrl.edit)
 // POST - localhost:3000/dogs
 router.post('/', dogsCtrl.create)
 
+// PUT - localhost:3000/taco/:id
+router.put('/:id', isLoggedIn, dogsCtrl.update)
+
+// PATCH - localhost:3000/dogs/:id/flip-lost
+router.patch("/:id/flip-lost", isLoggedIn, dogsCtrl.flipLost)
+
 export {
   router
 }

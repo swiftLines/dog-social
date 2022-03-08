@@ -7,11 +7,20 @@
     <div><%= dog.name %></div>
     <div>Approachability: </div>
     <div><%= dog.approach %></div>
-    <div><%= dog.lost %></div>
-    
+    <div>This dog is <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></div>
+    <% if (user) { %>
+      <form 
+        action="/dogs/<%= dog._id %>/flip-lost?_method=PATCH"
+        method="POST"
+      >
+        <button class="btn" type="submit">
+          Dog is <%= dog.lost ? "lost 🥺" : "found 🎉" %> 
+        </button>
+      </form>
+    <% } %>
     <% if (dog.owner.equals(user?.profile._id)) { %>
       <form action="/dogs/<%= dog._id %>/edit" method="GET">
-        <button class="btn" type="submit">Edit this Dog 🚧</button>
+        <button class="btn" type="submit">Edit this Dog Post🚧</button>
       </form>
     <% } %>
   </section>

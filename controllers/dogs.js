@@ -63,10 +63,47 @@ function edit(req, res) {
   })
 }
 
+function update(req, res) {
+  Dog.findById(req.params.id)
+  .then(dog => {
+    if (dog.owner.equals(req.user.profile._id)) {
+      req.body.lost = !!req.body.lost
+      dog.updateOne(req.body, {new: true})
+      .then(()=> {
+        res.redirect(`/dogs/${dog._id}`)
+      })
+    } else {
+      throw new Error ('🚫 Not authorized 🚫')
+    }  
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/dogs')
+  })
+}
+
+function flipLost(req, res) {
+  Dog.findById(req.params.id)
+  .then(dog => {
+    dog.lost = !dog.lost
+    dog.save()
+    .then(() => {
+      res.redirect(`/dogs/${dog._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/dogs")
+  })
+}
+
+
 export {
   index,
   newDogs as new,
   create,
   show,
-  edit
+  edit,
+  update,
+  flipLost
 }

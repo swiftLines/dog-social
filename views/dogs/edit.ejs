@@ -1,0 +1,46 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit the Dog! 🌮</h1>
+  <form action="/dogs/<%= dog._id %>?_method=PUT" method="POST">
+    <label>
+      Name: 
+      <input 
+        type="text"
+        name="name" 
+        value="<%= dog.name %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Approachability: 
+      <input 
+        type="text"
+        name="approach" 
+        value="<%= dog.approach %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Command: 
+      <input 
+        type="text"
+        name="command" 
+        value="<%= dog.command %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Lost?
+      <input 
+        type="checkbox" 
+        name="lost" 
+				<%= dog.lost ? "checked" : "" %> 
+      >
+    </label>
+    <button type="submit">Edit the 🐕</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>
