@@ -11,6 +11,7 @@
   <% dogs.forEach(dog => { %>
     <li>🐕<%= dog.name %></li>
     <li><%= dog.approach %></li>
+    <div>This dog is <%= dog.leash ? 'leashed! 🦮' : 'off leash! 🎉'%></div>
     <li><%= dog.location %></li>
     <li><%= dog.command %></li>
     <a href="/dogs/<%= dog._id %>">View dog.name</a>
