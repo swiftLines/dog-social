@@ -12,7 +12,9 @@ const commentSchema = new Schema({
   },
   date: {
     type: Date,
-  }
+  },
+}, {
+  timestamps: true, 
 })
 
 const dogSchema = new Schema({
@@ -22,6 +24,9 @@ const dogSchema = new Schema({
     required: true,
     enum: ['approach freely', 'approach with caution', 'do not approach']
   },
+  leash: Boolean,
+  location: String,
+  master: String,
   lost: Boolean,
   command: String,
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},

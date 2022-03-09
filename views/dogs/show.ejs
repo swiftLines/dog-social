@@ -7,6 +7,9 @@
     <div><%= dog.name %></div>
     <div>Approachability: </div>
     <div><%= dog.approach %></div>
+    <div>Location: </div>
+    <div><%= dog.location %></div>
+    <div>Owner: <%= dog.owner.name %> </div>
     <div>This dog is <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></div>
     <% if (user) { %>
       <form 
@@ -33,7 +36,6 @@
         id="add-comment-form"
         method="post"
       >
-        <label for="text-textarea">Comment:</label>
         <textarea name="text" id="comment-textarea"></textarea>
         <button type="submit">Add Comment</button>  
     </form>

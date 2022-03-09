@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Edit the Dog! 🌮</h1>
+  <h1>Edit the Dog! 🐶/h1>
   <form action="/dogs/<%= dog._id %>?_method=PUT" method="POST">
     <label>
       Name: 
@@ -14,14 +14,31 @@
       >
     </label>
     <label>
-      Approachability: 
+      Leashed: 
       <input 
         type="text"
-        name="approach" 
-        value="<%= dog.approach %>" 
+        name="command" 
+        value="<%= dog.leash %>" 
         autocomplete="off"
       >
     </label>
+    <label>
+      Location: 
+      <input 
+        type="text"
+        name="command" 
+        value="<%= dog.location %>" 
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Owner: 
+      <input 
+        type="text"
+        name="master" 
+        value="<%= dog.master %>" 
+        autocomplete="off"
+      >
     <label>
       Command: 
       <input 

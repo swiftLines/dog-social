@@ -36,17 +36,17 @@ function create(req, res) {
 function show(req, res) {
   Dog.findById(req.params.id)
   .populate('owner')
-  .then(dog => {
+  .exec((err, dog) => {
     console.log(dog)
     res.render('dogs/show', {
       dog,
       title: "Dog view" //use name of dog
     })
   })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/dogs')
-  })
+  // .catch(err => {
+  //   console.log(err)
+  //   res.redirect('/dogs')
+  // })
 }
 
 function edit(req, res) {
