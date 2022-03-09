@@ -16,10 +16,9 @@
     <label>
       Leashed: 
       <input 
-        type="text"
-        name="command" 
-        value="<%= dog.leash %>" 
-        autocomplete="off"
+      type="checkbox" 
+      name="leash" 
+      <%= dog.leash ? "checked" : "" %> 
       >
     </label>
     <label>
