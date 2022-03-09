@@ -7,12 +7,12 @@ const commentSchema = new Schema({
     type: String,
     //set max chars
   },
-  author: {
-    type: String
-  },
   date: {
     type: Date,
   },
+  author: {
+    type: Schema.Types.ObjectId, 
+    ref: "Profile"},
 }, {
   timestamps: true, 
 })
