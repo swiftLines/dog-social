@@ -13,7 +13,10 @@
     <li><%= dog.approach %></li>
     <div>This dog is <%= dog.leash ? 'leashed! 🦮' : 'off leash! 🎉'%></div>
     <li><%= dog.location %></li>
-    <li><%= dog.command %></li>
+    <% if (dog.lost === lost) { %>
+      <div>This dog is <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></div>
+      <li><%= dog.command %></li>
+      <% } %>
     <a href="/dogs/<%= dog._id %>">View dog.name</a>
   <% }) %>
   </ul>
