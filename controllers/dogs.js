@@ -35,14 +35,15 @@ function create(req, res) {
 
 function show(req, res) {
   Dog.findById(req.params.id)
-  .populate('owner author')
+  .populate('owner')
+  .populate('comments.author')
   .exec((err, dog) => {
-    console.log(dog)
-    res.render('dogs/show', {
-      dog,
-      title: "Dog view" //use name of dog
+    console.log('hi', dog)
+      res.render('dogs/show', {
+        dog,
+        title: "Dog view" //use name of dog
+      })
     })
-  })
   // .catch(err => {
   //   console.log(err)
   //   res.redirect('/dogs')
@@ -116,6 +117,7 @@ function deleteDog(req, res) {
 }
 
 function createComment(req, res) {
+  req.body.author = req.user.profile._id
   Dog.findById(req.params.id, function(err, dog) {
     dog.comments.push(req.body)
     dog.save(function(err) {
