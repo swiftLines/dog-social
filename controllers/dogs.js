@@ -35,7 +35,7 @@ function create(req, res) {
 
 function show(req, res) {
   Dog.findById(req.params.id)
-  .populate('owner')
+  .populate('owner author')
   .exec((err, dog) => {
     console.log(dog)
     res.render('dogs/show', {
