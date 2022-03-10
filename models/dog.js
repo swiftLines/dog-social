@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 const commentSchema = new Schema({
   text: {
     type: String,
-    //set max chars
+    maxlength: 30
   },
   date: {
     type: Date,
