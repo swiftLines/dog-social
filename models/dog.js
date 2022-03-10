@@ -18,7 +18,10 @@ const commentSchema = new Schema({
 })
 
 const dogSchema = new Schema({
-  name: String,
+  name: {
+    String,
+    maxlength: 20
+  },
   approach: {
     type: String,
     required: true,
