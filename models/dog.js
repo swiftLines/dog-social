@@ -19,7 +19,8 @@ const commentSchema = new Schema({
 
 const dogSchema = new Schema({
   name: {
-    String,
+    type: String,
+    required: true,
     maxlength: 20
   },
   approach: {
@@ -29,9 +30,11 @@ const dogSchema = new Schema({
   },
   leash: Boolean,
   location: String,
-  master: String,
   lost: Boolean,
-  command: String,
+  command: {
+    type: String,
+    maxlength: 15
+  },
   owner: {type: Schema.Types.ObjectId, ref: "Profile"},
   comments: [commentSchema],
 }, {
