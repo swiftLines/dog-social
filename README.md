@@ -1,9 +1,8 @@
 # Dog Social
 
-#### [Play Yahtzee here](https://swiftlines.github.io/dog-social/)
+#### [Go to Dog Social Here](https://git.heroku.com/dog-social.git)
 ---
-<img src ="https://i.imgur.com/J12JiZW.png">
-<blockquote class="imgur-embed-pub" lang="en" data-id="a/u3N1NdG" data-context="false" ><a href="//imgur.com/a/u3N1NdG"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+
 
 ---
 
