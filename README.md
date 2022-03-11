@@ -1,6 +1,6 @@
 # Dog Social
 
-#### [Dog Social link](https://git.heroku.com/dog-social.git)
+#### [Dog Social link](https://dog-social.herokuapp.com/)
 ---
 <img src ="https://i.imgur.com/eZ2eTq9.png">
 
