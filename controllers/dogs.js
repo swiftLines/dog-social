@@ -5,7 +5,7 @@ function index(req, res) {
   .then(dogs => {
     res.render('dogs/index', {
       dogs,
-      title: '🐕'
+      title: 'All Dogs'
     })
   })
   .catch(err => {

@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Edit the Dog! 🐶/h1>
+  <h1>Edit 🐶 </h1>
   <form action="/dogs/<%= dog._id %>?_method=PUT" method="POST">
     <label>
       Name: 
@@ -14,13 +14,6 @@
       >
     </label>
     <label>
-      Leashed: 
-      <input 
-      type="checkbox" 
-      name="leash" 
-      <%= dog.leash ? "checked" : "" %> 
-      >
-    <label>
       Command: 
       <input 
         type="text"
@@ -30,6 +23,13 @@
       >
     </label>
     <label>
+      Leashed: 
+      <input 
+      type="checkbox" 
+      name="leash" 
+      <%= dog.leash ? "checked" : "" %> 
+      >
+    <label>
       Lost?
       <input 
         type="checkbox" 
@@ -37,7 +37,7 @@
 				<%= dog.lost ? "checked" : "" %> 
       >
     </label>
-    <button type="submit">Edit the 🐕</button>
+    <button type="submit">Edit 🐕</button>
   </form>
 </section>
 
