@@ -1,25 +1,27 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section>
-  <h1>Dogs! </h1>
-  <% if (user) { %>
-    <a href="/dogs/new">Add Dog</a> 
-  <% } %>  
-  <h2>All the Dogs!</h2>
-	<ul>
-  <% dogs.forEach(dog => { %>
-    <li>🐕<%= dog.name %></li>
-    <li><%= dog.approach %></li>
-    <div>This dog is <%= dog.leash ? 'leashed! 🦮' : 'off leash! 🎉'%></div>
-    <li><%= dog.location %></li>
-    <% if (dog.lost === true) { %>
-      <div>This dog is <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></div>
-      <li><%= dog.command %></li>
-    <% } %>
-    <a href="/dogs/<%= dog._id %>">View dog.name</a>
-  <% }) %>
-  </ul>
-</section>
+<div class="container">
+  <section>
+    <h1 class='text-center mt-5'>Dogs!</h1>
+    <% if (user) { %>
+      <a href="/dogs/new">Add Dog</a> 
+    <% } %>  
+    <h2>All the Dogs!</h2>
+	  <ul>
+    <% dogs.forEach(dog => { %>
+      <li>🐕<%= dog.name %></li>
+      <li><%= dog.approach %></li>
+      <div>This dog is <%= dog.leash ? 'leashed! 🦮' : 'off leash! 🎉'%></div>
+      <li><%= dog.location %></li>
+      <% if (dog.lost === true) { %>
+        <div>This dog is <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></div>
+        <li><%= dog.command %></li>
+      <% } %>
+      <a href="/dogs/<%= dog._id %>">View dog.name</a>
+    <% }) %>
+    </ul>
+  </section>
+</div>
 
 <%- include('../partials/footer') %>
