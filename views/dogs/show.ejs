@@ -1,8 +1,12 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<main>
-  <h1><%= title %> </h1>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center"><%= title %></h1>
+    </div>
+  </div>
   <section>
     <div><%= dog.name %></div>
     <div>Approachability: </div>
@@ -68,6 +72,6 @@
   <% } else { %>
     <h3>No comments Yet</h3>
   <% } %>   
-</main>
+</div>
 
 <%- include('../partials/footer') %>
