@@ -15,7 +15,6 @@
           <hr>
           <div><%= dog.approach %></div>
           <div><%= dog.name %> is <%= dog.leash ? 'leashed! 🦮' : 'off leash! 🎉'%></div>
-          <div>Location: </div>
           <div>Owner: <%= dog.owner.name %> </div>
           <% if (dog.lost === true) { %>
             <div><%= dog.name %> is <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></div>
