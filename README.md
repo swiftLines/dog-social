@@ -21,6 +21,7 @@ Dog Social is a CRUD app where a user can create a post on the main feed page th
 - Node.js
 - Express
 - MongoDB
+- Google OAuth
 - git
 
 ---
