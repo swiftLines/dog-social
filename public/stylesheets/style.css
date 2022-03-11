@@ -29,6 +29,8 @@ nav {
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  
 }
 
 main {
@@ -40,4 +42,11 @@ main {
 
 h1 {
   font-size: 3.6rem;
+}
+
+#dogs-nav {
+  margin-right: 30px;
+  background-color: #00C386;
+  border-color: #2F4858;
+  color: #2F4858
 }

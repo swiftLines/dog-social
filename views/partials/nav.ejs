@@ -3,17 +3,19 @@
   <% } %>
 </head>
 <body>
-  <nav>
-    <a href="/dogs">🐕</a>
-    <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
-    <% } else { %>
-      <a href="/auth/google" class="siwg-link">
-        <button type="submit" class="siwg">
-          <img id="siwg-image" alt="Sign in with Google" />
-        </button>
-      </a>
-    <% } %>
-  </nav>
+  <div class="container"></div>
+    <nav>
+        <a id='dogs-nav' href="/dogs">DOGS</a>
+        <% if (user) { %>
+          <a href="/auth/logout">
+            <button type="submit">Logout</button>
+          </a>
+        <% } else { %>
+          <a href="/auth/google" class="siwg-link">
+            <button type="submit" class="siwg">
+              <img id="siwg-image" alt="Sign in with   Google" />
+            </button>
+          </a>
+        <% } %>
+    </nav>
+  </div>
