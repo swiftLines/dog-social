@@ -23,7 +23,7 @@
             <li class="list-group-item"><%= dog.location %></li>
             <% if (dog.lost === true) { %>
               <li class="list-group-item"><%= dog.name %> is  <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></li>
-              <li class="list-group-item"><%= dog.command %></li>
+              <li class="list-group-item">Command/s known: <%= dog.command %></li>
             <% } %>
           </div>
           <a class="card-footer text-right" href="/dogs/<%= dog._id %>">View Profile</a>
