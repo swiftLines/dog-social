@@ -11,19 +11,28 @@
         <% } %> 
       </div> 
     </div>
-	  <ul>
+	 
     <% dogs.forEach(dog => { %>
-      <li>🐕<%= dog.name %></li>
-      <li><%= dog.approach %></li>
-      <div><%= dog.name %> is <%= dog.leash ? 'leashed! 🦮' : 'off leash! 🎉'%></div>
-      <li><%= dog.location %></li>
-      <% if (dog.lost === true) { %>
-        <div>This dog is <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></div>
-        <li><%= dog.command %></li>
-      <% } %>
-      <a href="/dogs/<%= dog._id %>">View Profile</a>
+    <div class="row"> 
+      <div class="col">
+        <div class="card">
+          <li class="card-header font-weight-bold">🐕 <%= dog.name %></li>
+          <div class="card-body">
+            <li class="list-group-item"><%= dog.approach %></li>
+            <li class="list-group-item"><%= dog.name %> is <%= dog.leash ? 'leashed!   🦮' : 'off leash! 🎉'%></li>
+            <li class="list-group-item"><%= dog.location %></li>
+            <% if (dog.lost === true) { %>
+              <li class="list-group-item">This dog is <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></li>
+              <li class="list-group-item"><%= dog.command %></li>
+            <% } %>
+          </div>
+          <a class="card-footer" href="/dogs/<%= dog._id %>">View Profile</a>
+        </div>
+      </div>
+    </div>
+    <br>
     <% }) %>
-    </ul>
+   
   </section>
 </div>
 

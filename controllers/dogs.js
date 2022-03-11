@@ -69,6 +69,7 @@ function update(req, res) {
   .then(dog => {
     if (dog.owner.equals(req.user.profile._id)) {
       req.body.lost = !!req.body.lost
+      req.body.leash = !!req.body.leash
       dog.updateOne(req.body, {new: true})
       .then(()=> {
         res.redirect(`/dogs/${dog._id}`)
