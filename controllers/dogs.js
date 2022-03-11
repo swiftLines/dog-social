@@ -23,6 +23,7 @@ function newDogs(req, res) {
 function create(req, res) {
   req.body.owner = req.user.profile._id
   req.body.lost = !!req.body.lost
+  req.body.leash = !!req.body.leash
   Dog.create(req.body)
   .then(dog => {
     res.redirect('/dogs')

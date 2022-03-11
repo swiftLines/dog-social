@@ -20,7 +20,6 @@
           <div class="card-body">
             <li class="list-group-item"><%= dog.approach %></li>
             <li class="list-group-item"><%= dog.name %> is <%= dog.leash ? 'leashed!   🦮' : 'off leash! 🎉'%></li>
-            <li class="list-group-item"><%= dog.location %></li>
             <% if (dog.lost === true) { %>
               <li class="list-group-item"><%= dog.name %> is  <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></li>
               <li class="list-group-item">Command/s known: <%= dog.command %></li>
