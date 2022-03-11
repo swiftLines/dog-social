@@ -3,38 +3,51 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-12 text-center">
-      <h1 class="text-center" id="show-title"><%= title %></h1>
+    <div class="col-12 text-center mt-5">
+      <h1 class=><%= title %></h1>
     </div>
   </div>
-  <section>
-    <div><%= dog.name %></div>
-    <div>Approachability: </div>
-    <div><%= dog.approach %></div>
-    <div>This dog is <%= dog.leash ? 'leashed! 🦮' : 'off leash! 🎉'%></div>
-    <div>Location: </div>
-    <div><%= dog.location %></div>
-    <div>Owner: <%= dog.owner.name %> </div>
-    <% if (dog.lost === true) { %>
-      <div>This dog is <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></div>
-      <li><%= dog.command %></li>
-    <% } %>
+  <br>
+    <div class="row">
+      <div class="col">
+        <div class="'jumbotron text-center mt-5">
+          <h2 class="font-weight-bold"><%= dog.name %></h2>
+          <hr>
+          <div><%= dog.approach %></div>
+          <div><%= dog.name %> is <%= dog.leash ? 'leashed! 🦮' : 'off leash! 🎉'%></div>
+          <div>Location: </div>
+          <div><%= dog.location %></div>
+          <div>Owner: <%= dog.owner.name %> </div>
+          <% if (dog.lost === true) { %>
+            <div>This dog is <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></div>
+          <div>Known Command/s: <%= dog.command %></div>
+          <% } %>
+        </div>
+      </div>
+    </div>
     <% if (dog.owner.equals(user?.profile._id)) { %>
-      <form 
-        action="/dogs/<%= dog._id %>/flip-lost?_method=PATCH"
-        method="POST"
-      >
-        <button class="btn" type="submit">
-          Dog is <%= dog.lost ? "lost 🥺" : "found 🎉" %> 
-        </button>
-      </form>
-      <form action="/dogs/<%= dog._id %>/edit" method="GET">
-        <button class="btn" type="submit">Edit this Dog Post🚧</button>
-      </form>
-      <form action="/dogs/<%= dog._id %>?_method=DELETE" method="POST">
-      <button class='btn' type='submit'>Delete dog post 👋</button>
-      </form>
+      <div class="row">
+        <div class="col">
+          <span class="text-center">
+            <form 
+              action="/dogs/<%= dog._id %>/flip-lost?_method=PATCH"
+              method="POST"
+            >
+              <button class="btn" type="submit">
+                Dog is <%= dog.lost ? "found 🎉" : "lost 🥺" %> 
+              </button>
+            </form>
+            <form action="/dogs/<%= dog._id %>/edit" method="GET">
+              <button class="btn" type="submit">Edit this Dog Post🚧</button>
+            </form>
+            <form action="/dogs/<%= dog._id %>?_method=DELETE" method="POST">
+              <button class='btn' type='submit'>Delete dog post 👋</button>
+            </form>
+          </span>
+        </div>
+      </div>
     <% } %>
+        
     <h2>Comments</h2>
     <% if (user) { %>
       <form 
@@ -46,7 +59,7 @@
         <button type="submit">Add Comment</button>  
     </form>
     <% } %>
-  </section>
+  
   <% if (dog.comments.length) { %>
     <table>
       <thead>

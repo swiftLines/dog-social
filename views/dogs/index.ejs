@@ -5,7 +5,7 @@
   <section>
     <h1 class='text-center mt-5'>Dogs!</h1>
     <div class="row">
-      <div class="col text-center">
+      <div class="col text-center mb-5">
         <% if (user) { %>
           <a href="/dogs/new">Add Dog</a> 
         <% } %> 
@@ -15,22 +15,21 @@
     <% dogs.forEach(dog => { %>
     <div class="row"> 
       <div class="col">
-        <div class="card">
+        <div class="card mb-5" id="dog-cards">
           <li class="card-header font-weight-bold">🐕 <%= dog.name %></li>
           <div class="card-body">
             <li class="list-group-item"><%= dog.approach %></li>
             <li class="list-group-item"><%= dog.name %> is <%= dog.leash ? 'leashed!   🦮' : 'off leash! 🎉'%></li>
             <li class="list-group-item"><%= dog.location %></li>
             <% if (dog.lost === true) { %>
-              <li class="list-group-item">This dog is <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></li>
+              <li class="list-group-item"><%= dog.name %> is  <%= dog.lost ? 'lost! 🥺' : 'found! 🎉'%></li>
               <li class="list-group-item"><%= dog.command %></li>
             <% } %>
           </div>
-          <a class="card-footer" href="/dogs/<%= dog._id %>">View Profile</a>
+          <a class="card-footer text-right" href="/dogs/<%= dog._id %>">View Profile</a>
         </div>
       </div>
     </div>
-    <br>
     <% }) %>
    
   </section>
